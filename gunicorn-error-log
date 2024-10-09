@@ -1,0 +1,2030 @@
+[2024-10-08 21:21:01 +0000] [5506] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f54247e3ce0>
+  on_reload: <function OnReload.on_reload at 0x7f54247e3e20>
+  when_ready: <function WhenReady.when_ready at 0x7f54247e3f60>
+  pre_fork: <function Prefork.pre_fork at 0x7f5424804180>
+  post_fork: <function Postfork.post_fork at 0x7f54248042c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f5424804400>
+  worker_int: <function WorkerInt.worker_int at 0x7f5424804540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f5424804680>
+  pre_exec: <function PreExec.pre_exec at 0x7f54248047c0>
+  pre_request: <function PreRequest.pre_request at 0x7f5424804900>
+  post_request: <function PostRequest.post_request at 0x7f54248049a0>
+  child_exit: <function ChildExit.child_exit at 0x7f5424804ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f5424804c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f5424804d60>
+  on_exit: <function OnExit.on_exit at 0x7f5424804ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f5424805080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:21:01 +0000] [5506] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:21:01 +0000] [5506] [DEBUG] Arbiter booted
+[2024-10-08 21:21:01 +0000] [5506] [INFO] Listening at: unix:/run/agenda.socket (5506)
+[2024-10-08 21:21:01 +0000] [5506] [INFO] Using worker: sync
+[2024-10-08 21:21:01 +0000] [5507] [INFO] Booting worker with pid: 5507
+[2024-10-08 21:21:01 +0000] [5507] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:21:01 +0000] [5507] [INFO] Worker exiting (pid: 5507)
+[2024-10-08 21:21:01 +0000] [5506] [ERROR] Worker (pid:5507) exited with code 3
+[2024-10-08 21:21:01 +0000] [5506] [ERROR] Shutting down: Master
+[2024-10-08 21:21:01 +0000] [5506] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:21:02 +0000] [5508] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f036fecbce0>
+  on_reload: <function OnReload.on_reload at 0x7f036fecbe20>
+  when_ready: <function WhenReady.when_ready at 0x7f036fecbf60>
+  pre_fork: <function Prefork.pre_fork at 0x7f036feec180>
+  post_fork: <function Postfork.post_fork at 0x7f036feec2c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f036feec400>
+  worker_int: <function WorkerInt.worker_int at 0x7f036feec540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f036feec680>
+  pre_exec: <function PreExec.pre_exec at 0x7f036feec7c0>
+  pre_request: <function PreRequest.pre_request at 0x7f036feec900>
+  post_request: <function PostRequest.post_request at 0x7f036feec9a0>
+  child_exit: <function ChildExit.child_exit at 0x7f036feecae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f036feecc20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f036feecd60>
+  on_exit: <function OnExit.on_exit at 0x7f036feecea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f036feed080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:21:02 +0000] [5508] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:21:02 +0000] [5508] [DEBUG] Arbiter booted
+[2024-10-08 21:21:02 +0000] [5508] [INFO] Listening at: unix:/run/agenda.socket (5508)
+[2024-10-08 21:21:02 +0000] [5508] [INFO] Using worker: sync
+[2024-10-08 21:21:02 +0000] [5509] [INFO] Booting worker with pid: 5509
+[2024-10-08 21:21:02 +0000] [5509] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:21:02 +0000] [5509] [INFO] Worker exiting (pid: 5509)
+[2024-10-08 21:21:02 +0000] [5510] [INFO] Booting worker with pid: 5510
+[2024-10-08 21:21:02 +0000] [5508] [ERROR] Worker (pid:5509) exited with code 3
+[2024-10-08 21:21:02 +0000] [5510] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:21:02 +0000] [5510] [INFO] Worker exiting (pid: 5510)
+[2024-10-08 21:21:02 +0000] [5508] [ERROR] Worker (pid:5510) exited with code 3
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 201, in run
+    self.manage_workers()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 570, in manage_workers
+    self.spawn_workers()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 642, in spawn_workers
+    time.sleep(0.1 * random.random())
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 529, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/bin/gunicorn", line 8, in <module>
+    sys.exit(run())
+             ^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 66, in run
+    WSGIApplication("%(prog)s [OPTIONS] [APP_MODULE]", prog=prog).run()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 235, in run
+    super().run()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 71, in run
+    Arbiter(self).run()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 228, in run
+    self.halt(reason=inst.reason, exit_status=inst.exit_status)
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 341, in halt
+    self.stop()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 395, in stop
+    time.sleep(0.1)
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 241, in handle_chld
+    self.reap_workers()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 529, in reap_workers
+    raise HaltServer(reason, self.WORKER_BOOT_ERROR)
+gunicorn.errors.HaltServer: <HaltServer 'Worker failed to boot.' 3>
+[2024-10-08 21:21:02 +0000] [5512] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fe2be833ce0>
+  on_reload: <function OnReload.on_reload at 0x7fe2be833e20>
+  when_ready: <function WhenReady.when_ready at 0x7fe2be833f60>
+  pre_fork: <function Prefork.pre_fork at 0x7fe2be854180>
+  post_fork: <function Postfork.post_fork at 0x7fe2be8542c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fe2be854400>
+  worker_int: <function WorkerInt.worker_int at 0x7fe2be854540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fe2be854680>
+  pre_exec: <function PreExec.pre_exec at 0x7fe2be8547c0>
+  pre_request: <function PreRequest.pre_request at 0x7fe2be854900>
+  post_request: <function PostRequest.post_request at 0x7fe2be8549a0>
+  child_exit: <function ChildExit.child_exit at 0x7fe2be854ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fe2be854c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fe2be854d60>
+  on_exit: <function OnExit.on_exit at 0x7fe2be854ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fe2be855080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:21:02 +0000] [5512] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:21:02 +0000] [5512] [DEBUG] Arbiter booted
+[2024-10-08 21:21:02 +0000] [5512] [INFO] Listening at: unix:/run/agenda.socket (5512)
+[2024-10-08 21:21:02 +0000] [5512] [INFO] Using worker: sync
+[2024-10-08 21:21:02 +0000] [5513] [INFO] Booting worker with pid: 5513
+[2024-10-08 21:21:02 +0000] [5513] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:21:02 +0000] [5513] [INFO] Worker exiting (pid: 5513)
+[2024-10-08 21:21:02 +0000] [5512] [ERROR] Worker (pid:5513) exited with code 3
+[2024-10-08 21:21:02 +0000] [5512] [ERROR] Shutting down: Master
+[2024-10-08 21:21:02 +0000] [5512] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:21:02 +0000] [5515] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f271e467ce0>
+  on_reload: <function OnReload.on_reload at 0x7f271e467e20>
+  when_ready: <function WhenReady.when_ready at 0x7f271e467f60>
+  pre_fork: <function Prefork.pre_fork at 0x7f271e488180>
+  post_fork: <function Postfork.post_fork at 0x7f271e4882c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f271e488400>
+  worker_int: <function WorkerInt.worker_int at 0x7f271e488540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f271e488680>
+  pre_exec: <function PreExec.pre_exec at 0x7f271e4887c0>
+  pre_request: <function PreRequest.pre_request at 0x7f271e488900>
+  post_request: <function PostRequest.post_request at 0x7f271e4889a0>
+  child_exit: <function ChildExit.child_exit at 0x7f271e488ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f271e488c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f271e488d60>
+  on_exit: <function OnExit.on_exit at 0x7f271e488ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f271e489080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:21:02 +0000] [5515] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:21:02 +0000] [5515] [DEBUG] Arbiter booted
+[2024-10-08 21:21:02 +0000] [5515] [INFO] Listening at: unix:/run/agenda.socket (5515)
+[2024-10-08 21:21:02 +0000] [5515] [INFO] Using worker: sync
+[2024-10-08 21:21:02 +0000] [5516] [INFO] Booting worker with pid: 5516
+[2024-10-08 21:21:02 +0000] [5516] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:21:02 +0000] [5516] [INFO] Worker exiting (pid: 5516)
+[2024-10-08 21:21:02 +0000] [5515] [ERROR] Worker (pid:5516) exited with code 3
+[2024-10-08 21:21:02 +0000] [5515] [ERROR] Shutting down: Master
+[2024-10-08 21:21:02 +0000] [5515] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:21:03 +0000] [5517] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fb0265fbce0>
+  on_reload: <function OnReload.on_reload at 0x7fb0265fbe20>
+  when_ready: <function WhenReady.when_ready at 0x7fb0265fbf60>
+  pre_fork: <function Prefork.pre_fork at 0x7fb02661c180>
+  post_fork: <function Postfork.post_fork at 0x7fb02661c2c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fb02661c400>
+  worker_int: <function WorkerInt.worker_int at 0x7fb02661c540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fb02661c680>
+  pre_exec: <function PreExec.pre_exec at 0x7fb02661c7c0>
+  pre_request: <function PreRequest.pre_request at 0x7fb02661c900>
+  post_request: <function PostRequest.post_request at 0x7fb02661c9a0>
+  child_exit: <function ChildExit.child_exit at 0x7fb02661cae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fb02661cc20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fb02661cd60>
+  on_exit: <function OnExit.on_exit at 0x7fb02661cea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fb02661d080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:21:03 +0000] [5517] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:21:03 +0000] [5517] [DEBUG] Arbiter booted
+[2024-10-08 21:21:03 +0000] [5517] [INFO] Listening at: unix:/run/agenda.socket (5517)
+[2024-10-08 21:21:03 +0000] [5517] [INFO] Using worker: sync
+[2024-10-08 21:21:03 +0000] [5518] [INFO] Booting worker with pid: 5518
+[2024-10-08 21:21:03 +0000] [5518] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:21:03 +0000] [5518] [INFO] Worker exiting (pid: 5518)
+[2024-10-08 21:21:03 +0000] [5517] [ERROR] Worker (pid:5518) exited with code 3
+[2024-10-08 21:21:03 +0000] [5517] [ERROR] Shutting down: Master
+[2024-10-08 21:21:03 +0000] [5517] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:31:12 +0000] [5643] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7fed62ba7ce0>
+  on_reload: <function OnReload.on_reload at 0x7fed62ba7e20>
+  when_ready: <function WhenReady.when_ready at 0x7fed62ba7f60>
+  pre_fork: <function Prefork.pre_fork at 0x7fed62bc8180>
+  post_fork: <function Postfork.post_fork at 0x7fed62bc82c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7fed62bc8400>
+  worker_int: <function WorkerInt.worker_int at 0x7fed62bc8540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7fed62bc8680>
+  pre_exec: <function PreExec.pre_exec at 0x7fed62bc87c0>
+  pre_request: <function PreRequest.pre_request at 0x7fed62bc8900>
+  post_request: <function PostRequest.post_request at 0x7fed62bc89a0>
+  child_exit: <function ChildExit.child_exit at 0x7fed62bc8ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7fed62bc8c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7fed62bc8d60>
+  on_exit: <function OnExit.on_exit at 0x7fed62bc8ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7fed62bc9080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:31:12 +0000] [5643] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:31:12 +0000] [5643] [DEBUG] Arbiter booted
+[2024-10-08 21:31:12 +0000] [5643] [INFO] Listening at: unix:/run/agenda.socket (5643)
+[2024-10-08 21:31:12 +0000] [5643] [INFO] Using worker: sync
+[2024-10-08 21:31:12 +0000] [5644] [INFO] Booting worker with pid: 5644
+[2024-10-08 21:31:12 +0000] [5644] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:31:12 +0000] [5644] [INFO] Worker exiting (pid: 5644)
+[2024-10-08 21:31:12 +0000] [5643] [ERROR] Worker (pid:5644) exited with code 3
+[2024-10-08 21:31:12 +0000] [5643] [ERROR] Shutting down: Master
+[2024-10-08 21:31:12 +0000] [5643] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:31:13 +0000] [5645] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f751d223ce0>
+  on_reload: <function OnReload.on_reload at 0x7f751d223e20>
+  when_ready: <function WhenReady.when_ready at 0x7f751d223f60>
+  pre_fork: <function Prefork.pre_fork at 0x7f751d244180>
+  post_fork: <function Postfork.post_fork at 0x7f751d2442c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f751d244400>
+  worker_int: <function WorkerInt.worker_int at 0x7f751d244540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f751d244680>
+  pre_exec: <function PreExec.pre_exec at 0x7f751d2447c0>
+  pre_request: <function PreRequest.pre_request at 0x7f751d244900>
+  post_request: <function PostRequest.post_request at 0x7f751d2449a0>
+  child_exit: <function ChildExit.child_exit at 0x7f751d244ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f751d244c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f751d244d60>
+  on_exit: <function OnExit.on_exit at 0x7f751d244ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f751d245080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:31:13 +0000] [5645] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:31:13 +0000] [5645] [DEBUG] Arbiter booted
+[2024-10-08 21:31:13 +0000] [5645] [INFO] Listening at: unix:/run/agenda.socket (5645)
+[2024-10-08 21:31:13 +0000] [5645] [INFO] Using worker: sync
+[2024-10-08 21:31:13 +0000] [5646] [INFO] Booting worker with pid: 5646
+[2024-10-08 21:31:13 +0000] [5646] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:31:13 +0000] [5646] [INFO] Worker exiting (pid: 5646)
+[2024-10-08 21:31:13 +0000] [5645] [ERROR] Worker (pid:5646) exited with code 3
+[2024-10-08 21:31:13 +0000] [5645] [ERROR] Shutting down: Master
+[2024-10-08 21:31:13 +0000] [5645] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:31:13 +0000] [5648] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8564defce0>
+  on_reload: <function OnReload.on_reload at 0x7f8564defe20>
+  when_ready: <function WhenReady.when_ready at 0x7f8564deff60>
+  pre_fork: <function Prefork.pre_fork at 0x7f8564e10180>
+  post_fork: <function Postfork.post_fork at 0x7f8564e102c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8564e10400>
+  worker_int: <function WorkerInt.worker_int at 0x7f8564e10540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8564e10680>
+  pre_exec: <function PreExec.pre_exec at 0x7f8564e107c0>
+  pre_request: <function PreRequest.pre_request at 0x7f8564e10900>
+  post_request: <function PostRequest.post_request at 0x7f8564e109a0>
+  child_exit: <function ChildExit.child_exit at 0x7f8564e10ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8564e10c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8564e10d60>
+  on_exit: <function OnExit.on_exit at 0x7f8564e10ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f8564e11080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:31:13 +0000] [5648] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:31:13 +0000] [5648] [DEBUG] Arbiter booted
+[2024-10-08 21:31:13 +0000] [5648] [INFO] Listening at: unix:/run/agenda.socket (5648)
+[2024-10-08 21:31:13 +0000] [5648] [INFO] Using worker: sync
+[2024-10-08 21:31:13 +0000] [5649] [INFO] Booting worker with pid: 5649
+[2024-10-08 21:31:13 +0000] [5649] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:31:13 +0000] [5649] [INFO] Worker exiting (pid: 5649)
+[2024-10-08 21:31:13 +0000] [5648] [ERROR] Worker (pid:5649) exited with code 3
+[2024-10-08 21:31:13 +0000] [5648] [ERROR] Shutting down: Master
+[2024-10-08 21:31:13 +0000] [5648] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:31:13 +0000] [5650] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f8b57917ce0>
+  on_reload: <function OnReload.on_reload at 0x7f8b57917e20>
+  when_ready: <function WhenReady.when_ready at 0x7f8b57917f60>
+  pre_fork: <function Prefork.pre_fork at 0x7f8b57938180>
+  post_fork: <function Postfork.post_fork at 0x7f8b579382c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f8b57938400>
+  worker_int: <function WorkerInt.worker_int at 0x7f8b57938540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f8b57938680>
+  pre_exec: <function PreExec.pre_exec at 0x7f8b579387c0>
+  pre_request: <function PreRequest.pre_request at 0x7f8b57938900>
+  post_request: <function PostRequest.post_request at 0x7f8b579389a0>
+  child_exit: <function ChildExit.child_exit at 0x7f8b57938ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f8b57938c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f8b57938d60>
+  on_exit: <function OnExit.on_exit at 0x7f8b57938ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f8b57939080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:31:13 +0000] [5650] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:31:13 +0000] [5650] [DEBUG] Arbiter booted
+[2024-10-08 21:31:13 +0000] [5650] [INFO] Listening at: unix:/run/agenda.socket (5650)
+[2024-10-08 21:31:13 +0000] [5650] [INFO] Using worker: sync
+[2024-10-08 21:31:13 +0000] [5651] [INFO] Booting worker with pid: 5651
+[2024-10-08 21:31:13 +0000] [5651] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:31:13 +0000] [5651] [INFO] Worker exiting (pid: 5651)
+[2024-10-08 21:31:13 +0000] [5650] [ERROR] Worker (pid:5651) exited with code 3
+[2024-10-08 21:31:13 +0000] [5650] [ERROR] Shutting down: Master
+[2024-10-08 21:31:13 +0000] [5650] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:31:14 +0000] [5652] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f90aeba3ce0>
+  on_reload: <function OnReload.on_reload at 0x7f90aeba3e20>
+  when_ready: <function WhenReady.when_ready at 0x7f90aeba3f60>
+  pre_fork: <function Prefork.pre_fork at 0x7f90aebc0180>
+  post_fork: <function Postfork.post_fork at 0x7f90aebc02c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f90aebc0400>
+  worker_int: <function WorkerInt.worker_int at 0x7f90aebc0540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f90aebc0680>
+  pre_exec: <function PreExec.pre_exec at 0x7f90aebc07c0>
+  pre_request: <function PreRequest.pre_request at 0x7f90aebc0900>
+  post_request: <function PostRequest.post_request at 0x7f90aebc09a0>
+  child_exit: <function ChildExit.child_exit at 0x7f90aebc0ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f90aebc0c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f90aebc0d60>
+  on_exit: <function OnExit.on_exit at 0x7f90aebc0ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f90aebc1080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:31:14 +0000] [5652] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:31:14 +0000] [5652] [DEBUG] Arbiter booted
+[2024-10-08 21:31:14 +0000] [5652] [INFO] Listening at: unix:/run/agenda.socket (5652)
+[2024-10-08 21:31:14 +0000] [5652] [INFO] Using worker: sync
+[2024-10-08 21:31:14 +0000] [5653] [INFO] Booting worker with pid: 5653
+[2024-10-08 21:31:14 +0000] [5653] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:31:14 +0000] [5653] [INFO] Worker exiting (pid: 5653)
+[2024-10-08 21:31:14 +0000] [5652] [ERROR] Worker (pid:5653) exited with code 3
+[2024-10-08 21:31:14 +0000] [5652] [ERROR] Shutting down: Master
+[2024-10-08 21:31:14 +0000] [5652] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:34:29 +0000] [5728] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f868d85fce0>
+  on_reload: <function OnReload.on_reload at 0x7f868d85fe20>
+  when_ready: <function WhenReady.when_ready at 0x7f868d85ff60>
+  pre_fork: <function Prefork.pre_fork at 0x7f868d880180>
+  post_fork: <function Postfork.post_fork at 0x7f868d8802c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f868d880400>
+  worker_int: <function WorkerInt.worker_int at 0x7f868d880540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f868d880680>
+  pre_exec: <function PreExec.pre_exec at 0x7f868d8807c0>
+  pre_request: <function PreRequest.pre_request at 0x7f868d880900>
+  post_request: <function PostRequest.post_request at 0x7f868d8809a0>
+  child_exit: <function ChildExit.child_exit at 0x7f868d880ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f868d880c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f868d880d60>
+  on_exit: <function OnExit.on_exit at 0x7f868d880ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f868d881080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:34:29 +0000] [5728] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:34:29 +0000] [5728] [DEBUG] Arbiter booted
+[2024-10-08 21:34:29 +0000] [5728] [INFO] Listening at: unix:/run/agenda.socket (5728)
+[2024-10-08 21:34:29 +0000] [5728] [INFO] Using worker: sync
+[2024-10-08 21:34:29 +0000] [5729] [INFO] Booting worker with pid: 5729
+[2024-10-08 21:34:29 +0000] [5729] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:34:29 +0000] [5729] [INFO] Worker exiting (pid: 5729)
+[2024-10-08 21:34:29 +0000] [5728] [ERROR] Worker (pid:5729) exited with code 3
+[2024-10-08 21:34:29 +0000] [5728] [ERROR] Shutting down: Master
+[2024-10-08 21:34:29 +0000] [5728] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:34:30 +0000] [5730] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f38e2877ce0>
+  on_reload: <function OnReload.on_reload at 0x7f38e2877e20>
+  when_ready: <function WhenReady.when_ready at 0x7f38e2877f60>
+  pre_fork: <function Prefork.pre_fork at 0x7f38e2894180>
+  post_fork: <function Postfork.post_fork at 0x7f38e28942c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f38e2894400>
+  worker_int: <function WorkerInt.worker_int at 0x7f38e2894540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f38e2894680>
+  pre_exec: <function PreExec.pre_exec at 0x7f38e28947c0>
+  pre_request: <function PreRequest.pre_request at 0x7f38e2894900>
+  post_request: <function PostRequest.post_request at 0x7f38e28949a0>
+  child_exit: <function ChildExit.child_exit at 0x7f38e2894ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f38e2894c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f38e2894d60>
+  on_exit: <function OnExit.on_exit at 0x7f38e2894ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f38e2895080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:34:30 +0000] [5730] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:34:30 +0000] [5730] [DEBUG] Arbiter booted
+[2024-10-08 21:34:30 +0000] [5730] [INFO] Listening at: unix:/run/agenda.socket (5730)
+[2024-10-08 21:34:30 +0000] [5730] [INFO] Using worker: sync
+[2024-10-08 21:34:30 +0000] [5731] [INFO] Booting worker with pid: 5731
+[2024-10-08 21:34:30 +0000] [5731] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:34:30 +0000] [5731] [INFO] Worker exiting (pid: 5731)
+[2024-10-08 21:34:30 +0000] [5730] [ERROR] Worker (pid:5731) exited with code 3
+[2024-10-08 21:34:30 +0000] [5730] [ERROR] Shutting down: Master
+[2024-10-08 21:34:30 +0000] [5730] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:34:30 +0000] [5733] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7efe05b33ce0>
+  on_reload: <function OnReload.on_reload at 0x7efe05b33e20>
+  when_ready: <function WhenReady.when_ready at 0x7efe05b33f60>
+  pre_fork: <function Prefork.pre_fork at 0x7efe05b50180>
+  post_fork: <function Postfork.post_fork at 0x7efe05b502c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7efe05b50400>
+  worker_int: <function WorkerInt.worker_int at 0x7efe05b50540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7efe05b50680>
+  pre_exec: <function PreExec.pre_exec at 0x7efe05b507c0>
+  pre_request: <function PreRequest.pre_request at 0x7efe05b50900>
+  post_request: <function PostRequest.post_request at 0x7efe05b509a0>
+  child_exit: <function ChildExit.child_exit at 0x7efe05b50ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7efe05b50c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7efe05b50d60>
+  on_exit: <function OnExit.on_exit at 0x7efe05b50ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7efe05b51080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:34:30 +0000] [5733] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:34:30 +0000] [5733] [DEBUG] Arbiter booted
+[2024-10-08 21:34:30 +0000] [5733] [INFO] Listening at: unix:/run/agenda.socket (5733)
+[2024-10-08 21:34:30 +0000] [5733] [INFO] Using worker: sync
+[2024-10-08 21:34:30 +0000] [5734] [INFO] Booting worker with pid: 5734
+[2024-10-08 21:34:30 +0000] [5734] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:34:30 +0000] [5734] [INFO] Worker exiting (pid: 5734)
+[2024-10-08 21:34:30 +0000] [5733] [ERROR] Worker (pid:5734) exited with code 3
+[2024-10-08 21:34:30 +0000] [5733] [ERROR] Shutting down: Master
+[2024-10-08 21:34:30 +0000] [5733] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:34:30 +0000] [5735] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7ff3dfa07ce0>
+  on_reload: <function OnReload.on_reload at 0x7ff3dfa07e20>
+  when_ready: <function WhenReady.when_ready at 0x7ff3dfa07f60>
+  pre_fork: <function Prefork.pre_fork at 0x7ff3dfa24180>
+  post_fork: <function Postfork.post_fork at 0x7ff3dfa242c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7ff3dfa24400>
+  worker_int: <function WorkerInt.worker_int at 0x7ff3dfa24540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7ff3dfa24680>
+  pre_exec: <function PreExec.pre_exec at 0x7ff3dfa247c0>
+  pre_request: <function PreRequest.pre_request at 0x7ff3dfa24900>
+  post_request: <function PostRequest.post_request at 0x7ff3dfa249a0>
+  child_exit: <function ChildExit.child_exit at 0x7ff3dfa24ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7ff3dfa24c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7ff3dfa24d60>
+  on_exit: <function OnExit.on_exit at 0x7ff3dfa24ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7ff3dfa25080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:34:30 +0000] [5735] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:34:30 +0000] [5735] [DEBUG] Arbiter booted
+[2024-10-08 21:34:30 +0000] [5735] [INFO] Listening at: unix:/run/agenda.socket (5735)
+[2024-10-08 21:34:30 +0000] [5735] [INFO] Using worker: sync
+[2024-10-08 21:34:30 +0000] [5736] [INFO] Booting worker with pid: 5736
+[2024-10-08 21:34:30 +0000] [5736] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:34:30 +0000] [5736] [INFO] Worker exiting (pid: 5736)
+[2024-10-08 21:34:30 +0000] [5735] [ERROR] Worker (pid:5736) exited with code 3
+[2024-10-08 21:34:30 +0000] [5735] [ERROR] Shutting down: Master
+[2024-10-08 21:34:30 +0000] [5735] [ERROR] Reason: Worker failed to boot.
+[2024-10-08 21:34:31 +0000] [5737] [DEBUG] Current configuration:
+  config: ./gunicorn.conf.py
+  wsgi_app: None
+  bind: ['unix:/run/agenda.socket']
+  backlog: 2048
+  workers: 6
+  worker_class: sync
+  threads: 1
+  worker_connections: 1000
+  max_requests: 0
+  max_requests_jitter: 0
+  timeout: 30
+  graceful_timeout: 30
+  keepalive: 2
+  limit_request_line: 4094
+  limit_request_fields: 100
+  limit_request_field_size: 8190
+  reload: False
+  reload_engine: auto
+  reload_extra_files: []
+  spew: False
+  check_config: False
+  print_config: False
+  preload_app: False
+  sendfile: None
+  reuse_port: False
+  chdir: /home/estevan_diedrich/agendaapp
+  daemon: False
+  raw_env: []
+  pidfile: None
+  worker_tmp_dir: None
+  user: 1003
+  group: 33
+  umask: 0
+  initgroups: False
+  tmp_upload_dir: None
+  secure_scheme_headers: {'X-FORWARDED-PROTOCOL': 'ssl', 'X-FORWARDED-PROTO': 'https', 'X-FORWARDED-SSL': 'on'}
+  forwarded_allow_ips: ['127.0.0.1', '::1']
+  accesslog: -
+  disable_redirect_access_to_syslog: False
+  access_log_format: %(h)s %(l)s %(u)s %(t)s "%(r)s" %(s)s %(b)s "%(f)s" "%(a)s"
+  errorlog: /home/estevan_diedrich/agendaapp/gunicorn-error-log
+  loglevel: debug
+  capture_output: True
+  logger_class: gunicorn.glogging.Logger
+  logconfig: None
+  logconfig_dict: {}
+  logconfig_json: None
+  syslog_addr: udp://localhost:514
+  syslog: False
+  syslog_prefix: None
+  syslog_facility: user
+  enable_stdio_inheritance: True
+  statsd_host: None
+  dogstatsd_tags: 
+  statsd_prefix: 
+  proc_name: None
+  default_proc_name: project.wsgi:application
+  pythonpath: None
+  paste: None
+  on_starting: <function OnStarting.on_starting at 0x7f159ca43ce0>
+  on_reload: <function OnReload.on_reload at 0x7f159ca43e20>
+  when_ready: <function WhenReady.when_ready at 0x7f159ca43f60>
+  pre_fork: <function Prefork.pre_fork at 0x7f159ca60180>
+  post_fork: <function Postfork.post_fork at 0x7f159ca602c0>
+  post_worker_init: <function PostWorkerInit.post_worker_init at 0x7f159ca60400>
+  worker_int: <function WorkerInt.worker_int at 0x7f159ca60540>
+  worker_abort: <function WorkerAbort.worker_abort at 0x7f159ca60680>
+  pre_exec: <function PreExec.pre_exec at 0x7f159ca607c0>
+  pre_request: <function PreRequest.pre_request at 0x7f159ca60900>
+  post_request: <function PostRequest.post_request at 0x7f159ca609a0>
+  child_exit: <function ChildExit.child_exit at 0x7f159ca60ae0>
+  worker_exit: <function WorkerExit.worker_exit at 0x7f159ca60c20>
+  nworkers_changed: <function NumWorkersChanged.nworkers_changed at 0x7f159ca60d60>
+  on_exit: <function OnExit.on_exit at 0x7f159ca60ea0>
+  ssl_context: <function NewSSLContext.ssl_context at 0x7f159ca61080>
+  proxy_protocol: False
+  proxy_allow_ips: ['127.0.0.1', '::1']
+  keyfile: None
+  certfile: None
+  ssl_version: 2
+  cert_reqs: 0
+  ca_certs: None
+  suppress_ragged_eofs: True
+  do_handshake_on_connect: False
+  ciphers: None
+  raw_paste_global_conf: []
+  permit_obsolete_folding: False
+  strip_header_spaces: False
+  permit_unconventional_http_method: False
+  permit_unconventional_http_version: False
+  casefold_http_method: False
+  forwarder_headers: ['SCRIPT_NAME', 'PATH_INFO']
+  header_map: drop
+[2024-10-08 21:34:31 +0000] [5737] [INFO] Starting gunicorn 23.0.0
+[2024-10-08 21:34:31 +0000] [5737] [DEBUG] Arbiter booted
+[2024-10-08 21:34:31 +0000] [5737] [INFO] Listening at: unix:/run/agenda.socket (5737)
+[2024-10-08 21:34:31 +0000] [5737] [INFO] Using worker: sync
+[2024-10-08 21:34:31 +0000] [5738] [INFO] Booting worker with pid: 5738
+[2024-10-08 21:34:31 +0000] [5738] [ERROR] Exception in worker process
+Traceback (most recent call last):
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/arbiter.py", line 608, in spawn_worker
+    worker.init_process()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 135, in init_process
+    self.load_wsgi()
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/workers/base.py", line 147, in load_wsgi
+    self.wsgi = self.app.wsgi()
+                ^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/base.py", line 66, in wsgi
+    self.callable = self.load()
+                    ^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 57, in load
+    return self.load_wsgiapp()
+           ^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/app/wsgiapp.py", line 47, in load_wsgiapp
+    return util.import_app(self.app_uri)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/estevan_diedrich/agendaapp/venv/lib/python3.12/site-packages/gunicorn/util.py", line 370, in import_app
+    mod = importlib.import_module(module)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.12/importlib/__init__.py", line 90, in import_module
+    return _bootstrap._gcd_import(name[level:], package, level)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "<frozen importlib._bootstrap>", line 1387, in _gcd_import
+  File "<frozen importlib._bootstrap>", line 1360, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 1324, in _find_and_load_unlocked
+ModuleNotFoundError: No module named 'project.wsgi'
+[2024-10-08 21:34:31 +0000] [5738] [INFO] Worker exiting (pid: 5738)
+[2024-10-08 21:34:31 +0000] [5737] [ERROR] Worker (pid:5738) exited with code 3
+[2024-10-08 21:34:31 +0000] [5737] [ERROR] Shutting down: Master
+[2024-10-08 21:34:31 +0000] [5737] [ERROR] Reason: Worker failed to boot.

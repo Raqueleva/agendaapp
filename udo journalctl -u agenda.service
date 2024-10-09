@@ -1,0 +1,85 @@
+-- Logs begin at Thu 2024-10-03 18:14:15 UTC, end at Tue 2024-10-08 21:34:57 UTC. --
+Oct 08 21:21:01 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:21:01 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:21:01 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:21:02 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 1.
+Oct 08 21:21:02 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:21:02 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:21:02 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=1/FAILURE[0m
+Oct 08 21:21:02 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:21:02 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 2.
+Oct 08 21:21:02 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:21:02 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:21:02 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:21:02 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:21:02 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 3.
+Oct 08 21:21:02 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:21:02 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:21:02 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:21:02 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:21:03 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 4.
+Oct 08 21:21:03 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:21:03 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:21:03 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:21:03 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:21:03 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 5.
+Oct 08 21:21:03 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:21:03 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Start request repeated too quickly.[0m
+Oct 08 21:21:03 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:21:03 djangodeploy systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Gunicorn daemon (You can change if you want).[0m
+Oct 08 21:31:12 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:31:12 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:31:12 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:31:13 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 1.
+Oct 08 21:31:13 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:31:13 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:31:13 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:31:13 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:31:13 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 2.
+Oct 08 21:31:13 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:31:13 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:31:13 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:31:13 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:31:13 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 3.
+Oct 08 21:31:13 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:31:13 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:31:13 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:31:13 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:31:14 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 4.
+Oct 08 21:31:14 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:31:14 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:31:14 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:31:14 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:31:14 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 5.
+Oct 08 21:31:14 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:31:14 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Start request repeated too quickly.[0m
+Oct 08 21:31:14 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:31:14 djangodeploy systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Gunicorn daemon (You can change if you want).[0m
+Oct 08 21:34:29 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:34:29 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:34:29 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:34:30 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 1.
+Oct 08 21:34:30 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:34:30 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:34:30 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:34:30 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:34:30 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 2.
+Oct 08 21:34:30 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:34:30 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:34:30 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:34:30 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:34:30 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 3.
+Oct 08 21:34:30 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:34:30 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:34:30 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:34:30 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:34:31 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 4.
+Oct 08 21:34:31 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:34:31 djangodeploy systemd[1]: Started Gunicorn daemon (You can change if you want).
+Oct 08 21:34:31 djangodeploy systemd[1]: [0;1;39m[0;1;31m[0;1;39magenda.service: Main process exited, code=exited, status=3/NOTIMPLEMENTED[0m
+Oct 08 21:34:31 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:34:31 djangodeploy systemd[1]: agenda.service: Scheduled restart job, restart counter is at 5.
+Oct 08 21:34:31 djangodeploy systemd[1]: Stopped Gunicorn daemon (You can change if you want).
+Oct 08 21:34:31 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Start request repeated too quickly.[0m
+Oct 08 21:34:31 djangodeploy systemd[1]: [0;1;38;5;185m[0;1;39m[0;1;38;5;185magenda.service: Failed with result 'exit-code'.[0m
+Oct 08 21:34:31 djangodeploy systemd[1]: [0;1;31m[0;1;39m[0;1;31mFailed to start Gunicorn daemon (You can change if you want).[0m
